@@ -57,11 +57,12 @@ const login = async (req, res) => {
                 user,
             });
         } else {
-            return res.status(401).send({
+            return res.send({
                 success: false,
-                message: 'Wrong Password'
+                message: 'Wrong Password',
             });
         }
+
     } catch (error) {
         console.error('Internal server error', error.message);
         return res.status(500).send({

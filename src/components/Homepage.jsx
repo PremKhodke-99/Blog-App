@@ -11,7 +11,7 @@ const Homepage = ({ user }) => {
   const navigate = useNavigate();
 
   const getAllBlogs = async () => {
-    const response = await axios.get('http://localhost:5000/blog');
+    const response = await axios.get('https://blog-app-i31r.onrender.com/blog');
     const data = response.data;
     console.log(data);
 
@@ -28,10 +28,16 @@ const Homepage = ({ user }) => {
     })
   }
 
+  const handleView = async (blog) => {
+    navigate('/view', {
+      state: { blog }
+    })
+  }
+
   console.log(blogs);
 
   const handleDelete = async (id) => {
-    const response = await axios.delete(`http://localhost:5000/blog/deleteBlog/${id}`);
+    const response = await axios.delete(`https://blog-app-i31r.onrender.com/blog/deleteBlog/${id}`);
     const data = await response.data;
 
     if (data.success) {
@@ -66,6 +72,7 @@ const Homepage = ({ user }) => {
             blog={blog}
             handleDelete={handleDelete}
             handleEdit={handleEdit}
+            handleView={handleView}
             key={blog._id}
           />
         )) : <div className='h-full w-full flex justify-center items-center animate-spin'>

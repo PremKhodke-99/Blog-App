@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="w-[100vw] h-[100vh] overflow-x-hidden">
       <Navbar user={user} handleLogout={handleLogout} />
-      <Router>
+      {/* <Router> */}
         <Routes>
           <Route path="/" exact element={<Homepage user={user} />} />
           <Route path="/view" exact element={<ViewBlog user={user} />} />
@@ -37,7 +37,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/add-blog" element={!user ? <Login updateUser={updateUser} /> : <AddBlog user={user} />} />
         </Routes>
-      </Router>
+      {/* </Router> */}
     </div>
   )
 }

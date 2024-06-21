@@ -24,8 +24,10 @@ function App() {
   const handleLogout = () => {
     localStorage.removeItem('loggedInUser');
     setUser({});
+    window.location.reload()
   }
 
+  console.log(user);
   return (
     <div className="w-[100vw] h-[100vh] overflow-x-hidden">
       <Navbar user={user} handleLogout={handleLogout} />

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { BiHide, BiShow } from 'react-icons/bi';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
 
@@ -88,7 +88,7 @@ const Signup = () => {
             </div>
           </div>
           <button type='submit' className='bg-indigo-600 p-2 text-white rounded-lg font-bold hover:bg-indigo-700'>Sign up</button>
-          <p className='text-center text-lg'>Already registered? <a href="/login" className='text-indigo-800 underline'>Click here</a></p>
+          <p className='text-center text-lg'>Already registered? <Link to="/login" className='text-indigo-800 underline'>Click here</Link></p>
         </form>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { BiHide, BiShow } from 'react-icons/bi';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Login = ({ updateUser }) => {
@@ -77,7 +77,7 @@ const Login = ({ updateUser }) => {
                         </div>
                     </div>
                     <button type='submit' className='bg-indigo-600 p-2 text-white rounded-lg font-bold hover:bg-indigo-700'>Login</button>
-                    <p className='text-center text-lg'>Not registered yet? <a href="/signup" className='text-indigo-800 underline'>Click here</a></p>
+                    <p className='text-center text-lg'>Not registered yet? <Link to="/signup" className='text-indigo-800 underline'>Click here</Link></p>
                 </form>
             </div>
         </div>

@@ -5,6 +5,7 @@ import Signup from "./components/Signup"
 import AddBlog from "./components/AddBlog"
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
+import ViewBlog from "./components/ViewBlog"
 
 
 function App() {
@@ -31,9 +32,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" exact element={<Homepage user={user} />} />
+          <Route path="/view" exact element={<ViewBlog user={user} />} />
           <Route path="/login" element={!user ? <Login updateUser={updateUser} /> : <Homepage />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/add-blog" element={!user ? <Login updateUser={updateUser} /> : <AddBlog />} />
+          <Route path="/add-blog" element={!user ? <Login updateUser={updateUser} /> : <AddBlog user={user} />} />
         </Routes>
       </Router>
     </div>

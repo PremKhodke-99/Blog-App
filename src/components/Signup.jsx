@@ -29,7 +29,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post('http://localhost:5000/user/signup', userDetails);
+    const response = await axios.post('https://blog-app-i31r.onrender.com/user/signup', userDetails);
     const data = await response.data;
     if (data.success) { 
       toast.success(data.message);

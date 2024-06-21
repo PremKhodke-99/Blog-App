@@ -28,7 +28,7 @@ const Login = ({ updateUser }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await axios.post('http://localhost:5000/user/login', userDetails);
+        const response = await axios.post('https://blog-app-i31r.onrender.com/user/login', userDetails);
         const data = await response.data;
         // console.log(data);
         if (data.success) {

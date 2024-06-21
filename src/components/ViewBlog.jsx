@@ -11,7 +11,7 @@ const ViewBlog = ({ user }) => {
     return (
         <div className='p-4 h-[80%] relative'>
             <h1 className='text-3xl mb-5 font-bold text-center'>{location.state.blog.title}</h1>
-            <p className='text-xl p-2 italic'>{location.state.blog.content}</p>
+            <pre className='text-xl p-2'>{location.state.blog.content}</pre>
             <p className='text-sm mt-4 p-2'>Author: {location.state.blog.author}</p>
 
             {/* {

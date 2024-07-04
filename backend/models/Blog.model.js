@@ -12,6 +12,10 @@ const blogSchema = new Schema({
     author: {
         type: String,
         ref: 'User'
+    },
+    authorId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }
 }, {
     timestamps: true

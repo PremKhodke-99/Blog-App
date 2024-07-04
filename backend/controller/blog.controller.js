@@ -50,7 +50,7 @@ const getBlogById = async (req, res) => {
 
 const addNewBlog = async (req, res) => {
     const { title, content, id } = req.body;
-    console.log(title, content);
+    console.log(title, content, id);
     try {
         const user = await User.findById(id);
         // console.log(user);
@@ -58,7 +58,8 @@ const addNewBlog = async (req, res) => {
         const newBlog = new Blog({
             title,
             content,
-            author: user.name
+            author: user.name,
+            authorId: id
         })
         // console.log(newBlog);
         await newBlog.save();

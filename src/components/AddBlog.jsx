@@ -25,9 +25,9 @@ const AddBlog = ({ user }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = location.state ? (
-      await axios.put(`https://blog-app-i31r.onrender.com/blog/editBlog/${location.state.blog._id}`, blogDetails)
+      await axios.put(`${process.env.BACKEND_API}/blog/editBlog/${location.state.blog._id}`, blogDetails)
     ) : (
-      await axios.post('https://blog-app-i31r.onrender.com/blog/addBlog', blogDetails)
+      await axios.post(`${process.env.BACKEND_API}/blog/addBlog`, blogDetails)
     )
 
     const data = await response.data;

@@ -11,7 +11,7 @@ const Homepage = ({ user }) => {
   const navigate = useNavigate();
 
   const getAllBlogs = async () => {
-    const response = await axios.get('https://blog-app-i31r.onrender.com/blog');
+    const response = await axios.get('http://localhost:5000/blog');
     const data = response.data;
     console.log(data);
 
@@ -37,7 +37,7 @@ const Homepage = ({ user }) => {
   console.log(blogs);
 
   const handleDelete = async (id) => {
-    const response = await axios.delete(`https://blog-app-i31r.onrender.com/blog/deleteBlog/${id}`);
+    const response = await axios.delete(`${process.env.BACKEND_API}/blog/deleteBlog/${id}`);
     const data = await response.data;
 
     if (data.success) {

@@ -19,7 +19,7 @@ const Card = ({ user, blog, handleDelete, handleEdit, handleView }) => {
                     <GrView />
                 </button>
                 {
-                    user && (<>
+                    user && user._id === blog.authorId && (<>
                         <button
                             onClick={() => handleEdit(blog)}
                             className='w-10 h-10 bg-indigo-600 text-white rounded-lg flex justify-center items-center text-2xl hover:bg-indigo-700'
